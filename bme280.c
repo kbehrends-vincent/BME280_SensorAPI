@@ -557,7 +557,7 @@ int8_t bme280_set_sensor_settings(uint8_t desired_settings,
                                   struct bme280_dev *dev)
 {
     int8_t rslt;
-    uint8_t sensor_mode;
+    uint8_t sensor_mode = 0;
 
     if (settings != NULL)
     {
@@ -627,7 +627,7 @@ int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme28
 int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev)
 {
     int8_t rslt;
-    uint8_t last_set_mode;
+    uint8_t last_set_mode = 0;
 
     rslt = bme280_get_sensor_mode(&last_set_mode, dev);
 
